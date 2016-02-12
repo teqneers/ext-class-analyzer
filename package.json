@@ -1,0 +1,19 @@
+{
+  "name": "ext-class-analyser",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "ext-class-error-seeker": "^1.0.0",
+    "ext-class-seeker": "^1.0.0",
+    "ext-class-dependencies": "^1.0.0",
+    "js-file-seeker": "^1.0.0",
+    "jshint": "^2.8.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "thore",
+  "license": "ISC"
+}
