@@ -1,0 +1,53 @@
+{
+  "jsFileSeeker":{
+    "projectFolder": "path/to/your/workspace",
+    "skipPaths": [
+      "/.sencha/",
+      "/resources/",
+      "/ext/packages/[a-z-]+/test/"
+    ]
+  },
+  "extClassSeeker":{
+    "fastRunFiles": [
+      "/ext/"
+    ]
+  },
+  "errorSeeker": {
+    "showInfo": false,
+    "jsHintOptions" : {
+      "browser": true,
+      "jquery": true,
+      "maxerr": 10000,
+      "eqeqeq" : false,
+      "asi" : false,
+      "undef" : true,
+      "loopfunc" : true,
+      "-W069" : true
+    },
+    "globalVariables" : {
+      "alert": false,
+      "Draggabilly": false,
+      "eHtml": false,
+      "eHtmlAttribute": false,
+      "eSvg": false,
+      "Ext": false,
+      "FileReader": false,
+      "Highcharts": false,
+      "OpenLayers": false,
+      "Packery": false
+    }
+  },
+  "extClassDependencies": {
+    "namespaceColors": {
+      "Ext": "yellow"
+    }
+  },
+  "extClassAnalyser": {
+    "newDependencieRun": false,
+    "saveDependencies": true,
+    "saveDependenciePath" : "tmp/classDependencies.json",
+    "lookForErrors": true,
+    "saveErrors": true,
+    "saveErrorsPath": "tmp/error.log"
+  }
+}

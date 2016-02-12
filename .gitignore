@@ -1,3 +1,5 @@
-files
+files/*
+!files/config.json.default
+!files/drawGraphs.sh
 tmp
 .idea
