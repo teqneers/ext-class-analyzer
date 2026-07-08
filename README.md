@@ -1,6 +1,6 @@
 # Ext Class Analyser
 This tool can analyse ExtJS files. Therefor you need to install node on your system.
-It contains a validation for Ext-Specific errors, but also a validation using JSHint.
+It contains a validation for Ext-Specific errors, but also a JavaScript syntax-error check using acorn.
 In addition to that it will find dependencies between classes. Thereby it will create files in dot-notation.
 After going through your workspace, you can create dependency-graphs using GraphViz.
 
@@ -26,7 +26,7 @@ Seeks in the detected Files for Ext-Classes declarations. Those will be found if
 ##### extClassSeeker
 An Array which contains strings of paths (RegExp). The Files which are in those folders will get a fast Run.
  This means that instantiations will be skipped, and just declarations like xtype or alias will be observed.
- Also JSHint will be skipped on these files.
+ Also the syntax-error check will be skipped on these files.
 
 #### Ext Error Seeker (errorSeeker)
 This class will validate your Ext-Classes. It will show you the failures you made when using / requiring or instantiating a class,
@@ -35,12 +35,9 @@ which either not exists or is not mentioned in the "use/require" part.
 ##### showInfo
 boolean whether you want to see the errors of type "Information" or not.
  
-##### jsHintOptions
-these are options for using JSHint. To configure this see [JSHint options](http://jshint.com/docs/options/)
- 
 ##### globalVariables
 Javascript Object with key vale pairs. The keys define which variables should be known as globals in the code.
- Globals, which are not mentioned here but used in your code, will show an error.
+ They are used by the Ext-specific validation so that references to these globals are not reported as missing use/require entries.
  The values are booleans which state whether the variable will get edited by your code.
  If you develop classes for the Namespace "XY" then you should add the key "XY" with value of true.
  "Ext" itself should be added as global but set to false.
